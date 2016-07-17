@@ -845,7 +845,8 @@ class vmmDetails(vmmGObjectUI):
             not self.is_customize_dialog)
         show_firmware = ((self.conn.is_qemu() or
                           self.conn.is_test_conn() or
-                          self.conn.is_xen()) and
+                          self.conn.is_xen() or
+                          self.conn.is_bhyve()) and
                          domcaps.arch_can_uefi())
         uiutil.set_grid_row_visible(
             self.widget("overview-firmware-title"), show_firmware)
