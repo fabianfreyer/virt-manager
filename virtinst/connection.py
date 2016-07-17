@@ -386,6 +386,10 @@ class VirtualConnection(object):
         return self._uriobj.scheme.startswith("openvz")
     def is_container(self):
         return self.is_lxc() or self.is_openvz()
+    def is_bhyve(self):
+        return self._uriobj.scheme.startswith("bhyve")
+    def is_bhyve_system(self):
+        return (self.is_bhyve() and self._uriobj.path == "/system")
 
 
     #########################

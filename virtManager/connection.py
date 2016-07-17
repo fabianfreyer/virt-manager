@@ -354,6 +354,8 @@ class vmmConnection(vmmGObject):
                                getattr(s, "_backend").is_qemu_session)
     is_test_conn = property(lambda s: getattr(s, "_backend").is_test)
     is_session_uri = property(lambda s: getattr(s, "_backend").is_session_uri)
+    is_bhyve = property(lambda s: getattr(s, "_backend").is_bhyve)
+    is_bhyve_system = property(lambda s: getattr(s, "_backend").is_bhyve_system)
 
 
     # Connection capabilities debug helpers
